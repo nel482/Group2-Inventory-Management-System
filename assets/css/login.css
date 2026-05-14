@@ -1,0 +1,238 @@
+/* Login Page Styles */
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background: var(--bg-primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.login-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 48px 40px;
+    width: 100%;
+    max-width: 420px;
+    box-shadow: 0 8px 32px var(--shadow-medium);
+}
+
+.login-card h1 {
+    margin: 0 0 8px 0;
+    text-align: center;
+    color: var(--text-primary);
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.login-card .subtitle {
+    margin: 0 0 28px 0;
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+.error-msg {
+    background: var(--danger-bg);
+    border: 1px solid var(--danger-border);
+    color: var(--danger-text);
+    padding: 12px 14px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.login-card form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* Floating Label Field Group */
+.field-group {
+    position: relative;
+    margin-bottom: 24px;
+}
+
+.input-wrapper {
+    position: relative;
+    min-height: 72px;
+}
+
+.floating-input {
+    width: 100%;
+    padding: 20px 14px 10px 14px;
+    background: var(--input-bg);
+    border: none;
+    border-bottom: 2px solid var(--input-border);
+    border-radius: 4px 4px 0 0;
+    color: var(--input-text);
+    font-size: 15px;
+    font-family: inherit;
+    transition: border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1), background 0.3s ease, padding 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.floating-input::placeholder {
+    color: var(--text-muted);
+    opacity: 0.85;
+    line-height: 40px;
+}
+
+.floating-input:focus {
+    outline: none;
+    padding: 22px 14px 4px 14px;
+    background: rgba(var(--primary-rgb, 74, 144, 226), 0.05);
+    border-bottom-color: var(--sidebar-active-text);
+}
+
+.floating-input.has-value {
+    background: rgba(var(--primary-rgb, 74, 144, 226), 0.05);
+}
+
+.floating-label {
+    position: absolute;
+    left: 14px;
+    top: 4px;
+    font-size: 15px;
+    color: var(--text-muted);
+    font-weight: 500;
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-origin: left top;
+}
+
+.floating-input:focus ~ .floating-label,
+.floating-input.has-value ~ .floating-label {
+    top: 4px;
+    font-size: 12px;
+    color: var(--sidebar-active-text);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.input-border {
+    display: none;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.field label {
+    color: var(--text-secondary);
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+}
+
+.field input,
+.input-field {
+    padding: 14px 16px;
+    background: var(--input-bg);
+    border: 1.5px solid var(--input-border);
+    border-radius: 8px;
+    color: var(--input-text);
+    font-size: 15px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.field input::placeholder {
+    color: var(--text-muted);
+}
+
+.field input:focus {
+    outline: none;
+    background: var(--input-bg);
+    border-color: var(--input-focus-border);
+    box-shadow: 0 0 20px var(--shadow-light);
+}
+
+.btn-primary {
+    padding: 12px 16px;
+    background: var(--sidebar-active-text);
+    border: none;
+    border-radius: 6px;
+    color: white;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 15px var(--shadow-light);
+    margin-top: 8px;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px var(--shadow-medium);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+}
+
+/* Role Selection */
+.role-selector {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 28px;
+}
+
+.role-btn {
+    padding: 14px 16px;
+    background: var(--bg-secondary);
+    border: 1.5px solid var(--border-color);
+    border-radius: 8px;
+    color: var(--text-secondary);
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.role-btn:hover {
+    background: var(--sidebar-hover);
+    border-color: var(--sidebar-active-text);
+    color: var(--sidebar-active-text);
+}
+
+.role-btn.active {
+    background: var(--sidebar-active);
+    border-color: var(--sidebar-active-text);
+    color: var(--sidebar-active-text);
+    box-shadow: 0 0 20px var(--shadow-light);
+}
+
+.role-icon {
+    display: block;
+    font-size: 20px;
+    margin-bottom: 6px;
+}
+
+@media (max-width: 480px) {
+    .login-card {
+        margin: 20px;
+        padding: 32px 24px;
+    }
+
+    .login-card h1 {
+        font-size: 28px;
+    }
+
+    .field input {
+        font-size: 16px;
+    }
+}
